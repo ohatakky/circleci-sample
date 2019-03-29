@@ -10,6 +10,7 @@ jobs:
     steps:
       - checkout
 
+      - run: 'shell: /bin/sh'
       - run: curl -fSL https://github.com/reviewdog/reviewdog/releases/download/$REVIEWDOG_VERSION/reviewdog_linux_amd64 -o reviewdog && chmod +x ./reviewdog
       - run: ./reviewdog -list
       - run: go vet ./... | ./reviewdog -f=govet -diff='git diff master'
