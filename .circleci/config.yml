@@ -12,5 +12,5 @@ jobs:
 
       - run: curl -fSL https://github.com/reviewdog/reviewdog/releases/download/$REVIEWDOG_VERSION/reviewdog_linux_amd64 -o reviewdog && chmod +x ./reviewdog
       - run: 
-        shell: /bin/sh
-        command: go vet ./... 2>&1 | ./reviewdog -f=govet -reporter=github-pr-review
+          shell: /bin/sh
+          command: go vet ./... 2>&1 | ./reviewdog -f=govet -reporter=github-pr-review
