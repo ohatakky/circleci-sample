@@ -25,5 +25,5 @@ jobs:
 
       # specify any bash command here prefixed with `run: `
       - run: curl -fSL https://github.com/reviewdog/reviewdog/releases/download/$REVIEWDOG_VERSION/reviewdog_linux_amd64 -o reviewdog && chmod +x ./reviewdog
-      - run: reviewdog -list
+      - run: ./reviewdog -list
       - run: go vet ./... 2>&1 | ./reviewdog -f=govet -reporter=github-pr-review
