@@ -24,4 +24,5 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: go get -u github.com/reviewdog/reviewdog/cmd/reviewdog
       - run: go get golang.org/x/lint/golint
-      - run: 'go vet ./... | reviewdog -efm="%f:%l:%c: %m" -diff="git diff master"'
+      - run: reviewdog -reporter=github-pr-review
+      - run: 'go vet ./... | reviewdog -f=govet -diff="git diff master"'
