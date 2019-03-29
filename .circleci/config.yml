@@ -28,4 +28,4 @@ jobs:
       - run: ./reviewdog -list
       - run: echo $REVIEWDOG_TOKEN
       - run: echo $REVIEWDOG_GITHUB_API_TOKEN
-      - run: go vet ./... 2>&1 | ./reviewdog -f=govet -reporter=github-pr-review
+      - run: go vet ./... | ./reviewdog -f=govet -reporter=github-pr-review
